@@ -1,5 +1,5 @@
 {
-  "name": "therealgambo/kong-php",
+  "name": "jacklin/kong-php",
   "description": "A PHP7 compliant library for interacting with the Kong Gateway Admin API.",
   "keywords": ["kong", "kong gateway", "mashape-kong", "api-gateway"],
   "type": "Library",
@@ -12,10 +12,10 @@
     "mockery/mockery": "^0.9.4"
   },
   "support": {
-    "issues": "https://github.com/therealgambo/kong-php/issues"
+    "issues": "https://github.com/jacklin/kong-php/issues"
   },
   "license": "MIT",
-  "author": "therealgambo (https://github.com/therealgambo)",
+  "author": "jacklin (https://github.com/jacklin)",
   "autoload": {
     "psr-4": {
       "TheRealGambo\\Kong\\": "src/Kong"
