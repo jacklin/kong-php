@@ -18,7 +18,7 @@ To install kong-php with Composer, just add the following to your `composer.json
 ```json
 {
     "require-dev": {
-        "therealgambo/kong-php": "0.10.*"
+        "jacklin/kong-php": "0.10.*"
     }
 }
 ```
@@ -26,7 +26,7 @@ To install kong-php with Composer, just add the following to your `composer.json
 or by running the following command:
 
 ```shell
-composer require therealgambo/kong-php
+composer require jacklin/kong-php
 ```
 
 ## Usage

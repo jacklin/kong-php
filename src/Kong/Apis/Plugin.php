@@ -40,9 +40,9 @@ final class Plugin extends AbstractApi implements PluginInterface
      *
      * @return array|\stdClass
      */
-    public function delete($api_identifier, $identifier, array $headers = [])
+    public function delete($uri, $identifier, array $headers = [])
     {
-        return $this->deleteRequest('apis/' . $api_identifier . '/plugins/' . $identifier, $headers);
+        return $this->deleteRequest($uri . 'plugins/' . $identifier, $headers);
     }
 
     /**
@@ -106,25 +106,41 @@ final class Plugin extends AbstractApi implements PluginInterface
     {
         return $this->getRequest('plugins', $params, $headers);
     }
+    /**
+     * new list 2.2.x 
+     *
+     * @see  https://docs.konghq.com/2.2.x/admin-api/#list-routes
+     * 
+     * BaZhang Platform
+     * @Author   Jacklin@shouyiren.net
+     * @DateTime 2021-01-20T15:53:22+0800
+     * @param    string                   $uri     ./services/{service name or id}/ |routes/{route name or id}/ consumers/{consumer name or id}/
+     * @param    array                    $params  [description]
+     * @param    array                    $headers [description]
+     * @return   [type]                            [description]
+     */
+    public function nlist($uri='', array $params = [], array $headers = [])
+    {
+        return $this->getRequest($uri.'plugins', $params, $headers);
+    }
 
     /**
      * Update a plugins configuration on Kong
      *
      * @see https://getkong.org/docs/0.13.x/admin-api/#update-plugin
      *
-     * @param string $api_identifier
+     * @param string $uri
      * @param string $identifier
      * @param array  $body
      * @param array  $headers
      *
      * @return array|\stdClass
      */
-    public function update($api_identifier, $identifier, array $body = [], array $headers = [])
+    public function update($uri, $identifier, array $body = [], array $headers = [])
     {
         $this->setAllowedOptions($this->pluginAllowedOptions);
         $body = $this->createRequestBody($body);
-
-        return $this->patchRequest('apis/' . $api_identifier . '/plugins/' . $identifier, $body, $headers);
+        return $this->patchRequest($uri . 'plugins/' . $identifier, $body, $headers);
     }
 
     /**
